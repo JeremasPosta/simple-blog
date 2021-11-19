@@ -1,16 +1,23 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
+  PostReducer = Rack::Reducer.new(
+    Post.all,
+    ->(title:)    {where('lower(title) like ?', "%#{title.downcase}%")},
+    ->(category:) {where(category: category)},
+    ->(order: :created_at)  {reorder('created_at DESC')}
+  )
+
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = PostReducer.apply(request.query_parameters)
 
     render json: @posts
   end
 
   # GET /posts/1
   def show
-    render json: @post
+    render json: @post , serializer: PostDetailSerializer
   end
 
   # POST /posts
