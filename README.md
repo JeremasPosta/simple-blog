@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple-blog is just a blog made as requirement for Alkemy.org.
 
-Things you may want to cover:
+You can check the documentation at:
+https://documenter.getpostman.com/view/15625913/UVJWpetk
+
 
 * Ruby version
 
-* System dependencies
-
-* Configuration
+  2.7.4
 
 * Database creation
 
-* Database initialization
+  rails db:setup
+  
+  rails db:migrate
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+  rspec .\spec\
 
-* Deployment instructions
 
-* ...
