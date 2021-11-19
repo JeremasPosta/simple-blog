@@ -5,7 +5,7 @@ RSpec.describe Post, type: :model do
     Post.create(
                 title: "Post",
                 content: "Contenido del post.",
-                image: "image.jpg",
+                image: "http://example.com/image.jpg",
                 category: Category.create(name: "Tech"),
                 user_id: User.first.id
               )
