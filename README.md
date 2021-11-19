@@ -7,13 +7,16 @@ https://documenter.getpostman.com/view/15625913/UVJWpetk
 
 
 * Ruby version
+
   2.7.4
 
 * Database creation
+
   rails db:setup
   rails db:migrate
 
 * How to run the test suite
+
   rspec .\spec\
 
 
